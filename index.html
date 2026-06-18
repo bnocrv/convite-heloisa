@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Heloísa 9 Anos | Convite Digital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700;800;900&family=Parisienne&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#fff7ff;
+  --muted:rgba(255,247,255,.72);
+  --soft:rgba(255,247,255,.12);
+  --line:rgba(255,255,255,.18);
+  --dark:#090314;
+  --violet:#7c3aed;
+  --violet2:#a855f7;
+  --pink:#ec4899;
+  --gold:#ffd98a;
+  --cyan:#90f7ff;
+  --glass:rgba(18,8,38,.54);
+  --whatsapp:#22c55e;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  min-height:100vh;
+  color:var(--ink);
+  font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;
+  background:
+    radial-gradient(circle at 18% 10%, rgba(236,72,153,.35), transparent 25%),
+    radial-gradient(circle at 80% 18%, rgba(144,247,255,.20), transparent 22%),
+    radial-gradient(circle at 50% 95%, rgba(124,58,237,.45), transparent 34%),
+    linear-gradient(135deg,#05020d 0%,#140621 42%,#210a37 100%);
+  overflow-x:hidden;
+}
+a{color:inherit}
+button,a{ -webkit-tap-highlight-color:transparent }
+#stars,#orbs,#butterflies{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+#stars{z-index:0;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:42px 42px;opacity:.12;animation:drift 35s linear infinite}
+@keyframes drift{from{background-position:0 0}to{background-position:420px -420px}}
+.orb{position:absolute;border-radius:50%;filter:blur(18px);opacity:.45;animation:orb 12s ease-in-out infinite alternate}
+@keyframes orb{to{transform:translate3d(40px,-55px,0) scale(1.15)}}
+.bfly{position:absolute;width:28px;height:28px;opacity:.18;filter:drop-shadow(0 0 12px rgba(216,180,254,.8));animation:fly linear infinite}
+.bfly:before,.bfly:after{content:"";position:absolute;width:14px;height:22px;background:linear-gradient(145deg,rgba(255,255,255,.95),rgba(168,85,247,.45));border-radius:14px 14px 4px 14px;transform-origin:right center;animation:wing .62s ease-in-out infinite alternate}
+.bfly:after{left:14px;border-radius:14px 14px 14px 4px;transform-origin:left center}
+@keyframes wing{from{transform:rotateY(12deg) rotate(-22deg)}to{transform:rotateY(62deg) rotate(18deg)}}
+@keyframes fly{from{transform:translateY(110vh) translateX(0) rotate(0deg)}to{transform:translateY(-20vh) translateX(60px) rotate(25deg)}}
+.shell{position:relative;z-index:2;min-height:100vh}
+.screen{min-height:100vh;display:grid;place-items:center;padding:26px 16px}
+/* INTRO */
+.intro{position:fixed;z-index:50;inset:0;display:grid;place-items:center;background:radial-gradient(circle at 50% 24%,rgba(124,58,237,.45),transparent 28%),radial-gradient(circle at 50% 48%,#2c0b4b,#07020d 62%);transition:opacity .9s ease,visibility .9s ease}
+.intro.hide{opacity:0;visibility:hidden}
+.portal{width:min(430px,88vw);aspect-ratio:1;position:relative;display:grid;place-items:center;cursor:pointer;perspective:1200px}
+.portal-ring{position:absolute;inset:1%;border-radius:50%;background:conic-gradient(from 180deg,transparent,var(--gold),var(--pink),var(--violet2),var(--cyan),transparent);filter:drop-shadow(0 0 38px rgba(168,85,247,.7));animation:spin 9s linear infinite}
+.portal-ring:before{content:"";position:absolute;inset:18px;border-radius:50%;border:1px solid rgba(255,255,255,.12)}
+.portal-ring:after{content:"";position:absolute;inset:11px;border-radius:50%;background:radial-gradient(circle at 50% 35%,rgba(255,255,255,.06),transparent 34%),#090314}
+@keyframes spin{to{transform:rotate(360deg)}}
+.envelope3d{width:70%;aspect-ratio:1.42;position:relative;transform-style:preserve-3d;filter:drop-shadow(0 34px 48px rgba(0,0,0,.72));animation:float 3.2s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-10px) rotateX(4deg)}}
+.env-back{position:absolute;inset:0;border-radius:20px;background:linear-gradient(145deg,#4c1d95,#7e22ce 58%,#c084fc);box-shadow:inset 0 0 0 1px rgba(255,255,255,.24),inset 0 -30px 70px rgba(0,0,0,.28)}
+.env-flap-top{position:absolute;inset:0;clip-path:polygon(0 0,100% 0,50% 68%);background:linear-gradient(150deg,#f3d7ff,#a78bfa 52%,#5b21b6);transform-origin:top;transition:transform .95s cubic-bezier(.2,.8,.2,1);z-index:5;border-radius:20px 20px 0 0}
+.env-left{position:absolute;inset:auto auto 0 0;width:56%;height:70%;background:linear-gradient(35deg,#3b0f66,#7e22ce);clip-path:polygon(0 0,100% 100%,0 100%);z-index:3;border-radius:0 0 0 20px}
+.env-right{position:absolute;inset:auto 0 0 auto;width:56%;height:70%;background:linear-gradient(325deg,#3b0f66,#a855f7);clip-path:polygon(100% 0,0 100%,100% 100%);z-index:3;border-radius:0 0 20px 0}
+.invite-peek{position:absolute;left:10%;right:10%;bottom:13%;height:70%;border-radius:16px;background:linear-gradient(180deg,#fffaff,#f2e7ff);z-index:2;color:#5b21b6;font-family:Cinzel,serif;font-weight:800;letter-spacing:.12em;box-shadow:0 -8px 28px rgba(255,255,255,.16);transition:transform .95s cubic-bezier(.2,.8,.2,1) .35s}
+.invite-peek span{position:absolute;left:0;right:0;top:18px;text-align:center;font-size:12px;color:#9f5df8;letter-spacing:.22em;text-transform:uppercase}
+.seal{position:absolute;z-index:7;left:50%;top:54%;transform:translate(-50%,-50%);width:70px;height:70px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 34% 28%,#fff8d7,#f2c65d 58%,#a66a16);color:#4a2100;font-family:Cinzel,serif;font-weight:900;font-size:31px;box-shadow:0 0 0 7px rgba(255,217,138,.13),0 0 30px rgba(255,217,138,.72);transition:.4s}
+.opened .env-flap-top{transform:rotateX(-176deg)}
+.opened .invite-peek{transform:translateY(-116%)}
+.opened .seal{opacity:0;transform:translate(-50%,-50%) scale(.45)}
+.intro-copy{position:absolute;inset:0;text-align:center;width:100%;padding:0 24px;pointer-events:none}
+.intro-copy h1{position:absolute;left:0;right:0;bottom:7%;font-family:Parisienne,cursive;font-size:clamp(48px,13vw,78px);font-weight:400;text-shadow:0 0 26px rgba(236,72,153,.55);line-height:.9}
+.intro-copy p{position:absolute;left:0;right:0;top:calc(100% + 12px);margin-top:0;color:rgba(255,247,255,.78);font-weight:800;font-size:14px;animation:pulse 1.8s infinite}
+@keyframes pulse{50%{opacity:.48}}
+/* HERO */
+.hero{width:min(1120px,100%);display:grid;grid-template-columns:1.04fr .96fr;gap:28px;align-items:center}
+.hero-card,.event-card,.price-modal-card{border:1px solid var(--line);background:linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.055));backdrop-filter:blur(22px);box-shadow:0 28px 90px rgba(0,0,0,.45);border-radius:36px}
+.hero-card{padding:clamp(26px,5vw,54px);position:relative;overflow:hidden}
+.hero-card:before{content:"";position:absolute;inset:-2px;background:radial-gradient(circle at 0 0,rgba(255,217,138,.34),transparent 28%),radial-gradient(circle at 100% 10%,rgba(236,72,153,.28),transparent 30%);pointer-events:none}
+.kicker{position:relative;display:inline-flex;gap:10px;align-items:center;padding:9px 14px;border:1px solid rgba(255,217,138,.34);border-radius:999px;background:rgba(255,217,138,.08);color:#ffe7aa;font-weight:900;font-size:12px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:22px}
+.hero h2{position:relative;font-family:Cinzel,serif;font-size:clamp(42px,8vw,84px);line-height:.9;letter-spacing:-.05em;margin-bottom:18px;text-shadow:0 18px 42px rgba(0,0,0,.35)}
+.hero h2 span{display:block;font-family:Parisienne,cursive;font-weight:400;font-size:1.08em;color:#ffe1fb;text-shadow:0 0 28px rgba(236,72,153,.65)}
+.lead{position:relative;color:var(--muted);font-size:clamp(16px,2.3vw,20px);line-height:1.65;max-width:620px}
+.final-cta{width:min(1120px,100%);padding:0 16px 84px;margin:-22px auto 0;text-align:center}
+.final-cta h3{font-family:Cinzel,serif;font-size:clamp(24px,4vw,38px);line-height:1.05;margin-bottom:8px}
+.final-cta p{color:var(--muted);font-weight:700;margin-bottom:18px}
+.cta-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.cta-actions .btn{min-width:190px}
+.btn{border:0;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:18px;padding:15px 18px;font-weight:900;transition:.2s transform,.2s filter,.2s background;font-size:15px}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.btn-main{background:linear-gradient(135deg,var(--whatsapp),#128c7e);color:white;box-shadow:0 16px 32px rgba(34,197,94,.24)}
+.btn-ghost{background:rgba(255,255,255,.09);border:1px solid var(--line);color:white}
+.photo-stage{min-height:640px;border-radius:44px;position:relative;overflow:hidden;background:linear-gradient(160deg,#35115d,#080312);box-shadow:0 35px 90px rgba(0,0,0,.55), inset 0 0 0 1px rgba(255,255,255,.17)}
+.photo-stage:before{content:"";position:absolute;inset:0;background:url('heloisa.png') center/cover no-repeat;filter:saturate(1.05) contrast(1.05);opacity:.92}
+.photo-stage:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,2,13,.03),rgba(5,2,13,.52) 58%,rgba(5,2,13,.96)),radial-gradient(circle at 50% 28%,transparent 0 28%,rgba(124,58,237,.18) 60%,rgba(0,0,0,.4))}
+.photo-fallback{position:absolute;inset:0;display:grid;place-items:center;font-family:Parisienne,cursive;font-size:96px;color:rgba(255,255,255,.32)}
+.photo-content{position:absolute;left:50%;bottom:24px;z-index:2;width:min(332px,calc(100% - 48px));transform:translateX(-50%);padding:24px 28px;border-radius:28px;background:rgba(8,3,20,.56);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(18px);text-align:center}
+.age{font-family:Cinzel,serif;font-size:clamp(58px,10vw,112px);font-weight:900;line-height:.8;color:var(--gold);text-shadow:0 0 36px rgba(255,217,138,.38)}
+.photo-content p{font-weight:900;font-size:20px;letter-spacing:.08em;text-transform:uppercase;margin-top:12px;color:#fff}
+/* INFO */
+.info-section{width:min(1120px,100%);margin:-42px auto 0;padding:0 16px 66px}
+.event-card{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:center;padding:clamp(22px,4vw,34px);border-radius:30px}
+.event-card h3{font-family:Cinzel,serif;font-size:clamp(24px,4vw,38px);line-height:1.05;margin-bottom:18px}
+.event-list{display:grid;gap:13px}
+.event-item{display:grid;grid-template-columns:86px 1fr;gap:12px;align-items:start;border-top:1px solid rgba(255,255,255,.12);padding-top:13px}
+.event-item:first-child{border-top:0;padding-top:0}
+.event-item b{color:var(--gold);font-size:12px;text-transform:uppercase;letter-spacing:.16em}
+.event-item span{color:var(--ink);font-weight:800;line-height:1.35}
+.event-item small{display:block;color:var(--muted);font-size:13px;font-weight:700;margin-top:3px}
+.countdown{padding:20px;background:linear-gradient(135deg,rgba(255,217,138,.13),rgba(168,85,247,.12));border-radius:24px;border:1px solid var(--line)}
+.count-title b{font-size:12px;color:var(--gold);letter-spacing:.18em;text-transform:uppercase}.count-title strong{display:block;font-size:20px;margin-top:5px}
+.count-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px}.count-unit{background:rgba(255,255,255,.08);border:1px solid var(--line);border-radius:18px;text-align:center;padding:12px 6px}.num{font-family:Cinzel,serif;font-weight:900;font-size:clamp(24px,4vw,36px);color:#fff}.lbl{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:800;margin-top:3px}
+/* MODAL */
+.price-modal{position:fixed;z-index:70;inset:0;display:none;place-items:center;padding:18px;background:rgba(3,1,8,.72);backdrop-filter:blur(12px)}
+.price-modal.show{display:grid}.price-modal-card{width:min(760px,100%);max-height:88vh;overflow:auto;padding:24px;border-radius:32px;background:linear-gradient(160deg,rgba(22,9,45,.92),rgba(49,14,83,.86))}
+.modal-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:18px}.modal-head h3{font-family:Cinzel,serif;font-size:30px;line-height:1}.modal-head p{color:var(--muted);margin-top:8px;line-height:1.5}.close{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.09);color:white;font-size:26px;cursor:pointer}.price-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.price-card{border:1px solid var(--line);border-radius:22px;padding:18px;background:rgba(255,255,255,.08)}.price-card h4{font-size:18px;margin-bottom:5px}.price-card small{display:block;color:var(--muted);line-height:1.45;margin-bottom:14px}.row{display:flex;justify-content:space-between;border-top:1px solid rgba(255,255,255,.12);padding:12px 0;gap:12px}.row span{color:var(--muted);font-weight:700}.row strong{color:var(--gold);font-size:18px}.note{margin-top:14px;padding:14px;border-radius:18px;background:rgba(255,217,138,.09);border:1px solid rgba(255,217,138,.22);color:#ffe9b8;font-weight:700;line-height:1.5}
+@media(max-width:860px){.screen{min-height:auto;padding-top:36px}.hero{grid-template-columns:1fr}.photo-stage{min-height:520px;order:-1}.info-section{margin-top:18px}.event-card{grid-template-columns:1fr}.price-grid{grid-template-columns:1fr}.final-cta{margin-top:-28px}}
+@media(max-width:430px){.portal{width:min(390px,86vw)}.photo-stage{min-height:440px}.hero-card{border-radius:28px}.event-item{grid-template-columns:1fr;gap:4px}.count-grid{gap:7px}.count-unit{border-radius:16px;padding:11px 4px}.final-cta{padding-bottom:56px}.cta-actions{display:grid}.cta-actions .btn{width:100%;min-width:0}.intro-copy h1{bottom:6%}.intro-copy p{top:calc(100% + 10px)}}
+</style>
+</head>
+<body>
+<div id="stars"></div><div id="orbs"></div><div id="butterflies"></div>
+<audio id="inviteSong" src="song.mp3" preload="auto" loop></audio>
+
+<div class="intro" id="intro">
+  <div class="portal" id="portal" role="button" aria-label="Abrir convite">
+    <div class="portal-ring"></div>
+    <div class="envelope3d" id="envelope">
+      <div class="env-back"></div><div class="invite-peek"><span>9 anos</span></div><div class="env-flap-top"></div><div class="env-left"></div><div class="env-right"></div><div class="seal">H</div>
+    </div>
+    <div class="intro-copy"><h1>Heloísa</h1><p>toque para abrir o convite</p></div>
+  </div>
+</div>
+
+<main class="shell">
+  <section class="screen">
+    <div class="hero">
+      <div class="hero-card">
+        <div class="kicker">✦ Jardim das Borboletas ✦</div>
+        <h2>Heloísa <span>faz 9 anos</span></h2>
+        <p class="lead">Vamos celebrar esse dia com carinho, alegria e muita diversão no boliche. Sua presença vai deixar essa noite ainda mais especial.</p>
+      </div>
+      <div class="photo-stage">
+        <div class="photo-fallback">H</div>
+        <div class="photo-content"><div class="age">9</div><p>anos de luz, amor e alegria</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="info-section">
+    <div class="event-card">
+      <div>
+        <h3>Detalhes da festa</h3>
+        <div class="event-list">
+          <div class="event-item"><b>Quando</b><span>26 de junho, às 18h<small>Sexta-feira</small></span></div>
+          <div class="event-item"><b>Onde</b><span>Santo Strike<small>Boliche e Gastronomia</small></span></div>
+          <div class="event-item"><b>Endereço</b><span>Rua Beira Linha, 84<small>Jardim Glória, Duque de Caxias - RJ</small></span></div>
+        </div>
+      </div>
+      <div class="countdown">
+        <div class="count-title"><b>Contagem regressiva</b><strong>Faltam para a festa</strong></div>
+        <div class="count-grid">
+          <div class="count-unit"><div class="num" id="d">00</div><div class="lbl">dias</div></div>
+          <div class="count-unit"><div class="num" id="h">00</div><div class="lbl">horas</div></div>
+          <div class="count-unit"><div class="num" id="m">00</div><div class="lbl">min</div></div>
+          <div class="count-unit"><div class="num" id="s">00</div><div class="lbl">seg</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <h3>Confirme sua presença</h3>
+    <p>Assim conseguimos preparar tudo com carinho.</p>
+    <div class="cta-actions">
+      <a class="btn btn-main" href="https://wa.me/5521990969184?text=Olá!%20Confirmo%20minha%20presença%20na%20festa%20da%20Heloísa%20dia%2026%2F06%20às%2018h%20🦋" target="_blank">Confirmar presença</a>
+      <button class="btn btn-ghost" onclick="openPrices()">Ver valores</button>
+      <a class="btn btn-ghost" href="https://maps.google.com/?q=Rua+Beira+Linha+84+Jardim+Gloria+Duque+de+Caxias+RJ" target="_blank">Abrir localização</a>
+    </div>
+  </section>
+</main>
+
+<div class="price-modal" id="prices" onclick="modalBg(event)">
+  <div class="price-modal-card">
+    <div class="modal-head">
+      <div><h3>Valores</h3><p>Consulta rápida para os convidados.</p></div>
+      <button class="close" onclick="closePrices()">×</button>
+    </div>
+    <div class="price-grid">
+      <div class="price-card"><h4>Rodízio Tradicional</h4><small>Buffet de massas, salgadinhos, petiscos, sobremesas e pizzas.</small><div class="row"><span>Dinheiro físico</span><strong>R$ 59,99</strong></div><div class="row"><span>Cartão</span><strong>R$ 64,99</strong></div><div class="note">Refil incluso com reserva: grátis. Sem reserva: R$ 15,00.</div></div>
+      <div class="price-card"><h4>Fusion Food</h4><small>Inclui tradicional, churrasco na brasa, oriental e sobremesa especial.</small><div class="row"><span>Dinheiro físico</span><strong>R$ 79,99</strong></div><div class="row"><span>Cartão</span><strong>R$ 84,99</strong></div><div class="note">Refil com reserva: R$ 5,00. Sem reserva: R$ 15,00.</div></div>
+    </div>
+    <div class="note">Boliche incluso · Área kids disponível · Instagram: @santo_strike_oficial</div>
+  </div>
+</div>
+<script>
+const $=s=>document.querySelector(s);
+(function ambient(){
+ const orbs=$('#orbs');
+ [['8%','14%','180px','#ec4899'],['76%','10%','150px','#90f7ff'],['60%','74%','220px','#7c3aed']].forEach((o,i)=>{let d=document.createElement('div');d.className='orb';d.style.cssText=`left:${o[0]};top:${o[1]};width:${o[2]};height:${o[2]};background:${o[3]};animation-delay:${i*1.7}s`;orbs.appendChild(d)});
+ const wrap=$('#butterflies'); for(let i=0;i<22;i++){let b=document.createElement('i');b.className='bfly';b.style.cssText=`left:${Math.random()*100}%;animation-duration:${12+Math.random()*18}s;animation-delay:${Math.random()*18}s;transform:scale(${.65+Math.random()*1.05})`;wrap.appendChild(b)}
+})();
+$('#portal').addEventListener('click',()=>{
+ const song=$('#inviteSong');
+ song.volume=.55;
+ song.play().catch(()=>{});
+ $('#envelope').classList.add('opened');
+ setTimeout(()=>{$('#intro').classList.add('hide')},1250);
+});
+function openPrices(){ $('#prices').classList.add('show'); document.body.style.overflow='hidden'; }
+function closePrices(){ $('#prices').classList.remove('show'); document.body.style.overflow=''; }
+function modalBg(e){ if(e.target.id==='prices') closePrices(); }
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closePrices()});
+function tick(){
+ const target=new Date('2026-06-26T18:00:00-03:00').getTime(); let diff=target-Date.now();
+ if(diff<0) diff=0; const d=Math.floor(diff/86400000),h=Math.floor(diff%86400000/3600000),m=Math.floor(diff%3600000/60000),s=Math.floor(diff%60000/1000);
+ ['d','h','m','s'].forEach((id,i)=>$('#'+id).textContent=String([d,h,m,s][i]).padStart(2,'0'));
+}
+tick(); setInterval(tick,1000);
+</script>
+</body>
+</html>
