@@ -110,10 +110,10 @@ button,a{ -webkit-tap-highlight-color:transparent }
 /* MODAL */
 .price-modal,.location-modal{position:fixed;z-index:70;inset:0;display:none;place-items:center;padding:18px;background:rgba(3,1,8,.72);backdrop-filter:blur(12px)}
 .price-modal.show,.location-modal.show{display:grid}.price-modal-card,.location-modal-card{width:min(760px,100%);max-height:88vh;overflow:auto;padding:24px;border-radius:32px;background:linear-gradient(160deg,rgba(22,9,45,.92),rgba(49,14,83,.86))}
-.modal-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:18px}.modal-head h3{font-family:Cinzel,serif;font-size:30px;line-height:1}.modal-head p{color:var(--muted);margin-top:8px;line-height:1.5}.close{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.09);color:white;font-size:26px;cursor:pointer}.price-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.price-card{border:1px solid var(--line);border-radius:22px;padding:18px;background:rgba(255,255,255,.08)}.price-card h4{font-size:18px;margin-bottom:5px}.price-card small{display:block;color:var(--muted);line-height:1.45;margin-bottom:14px}.row{display:flex;justify-content:space-between;border-top:1px solid rgba(255,255,255,.12);padding:12px 0;gap:12px}.row span{color:var(--muted);font-weight:700}.row strong{color:var(--gold);font-size:18px}.note{margin-top:14px;padding:14px;border-radius:18px;background:rgba(255,217,138,.09);border:1px solid rgba(255,217,138,.22);color:#ffe9b8;font-weight:700;line-height:1.5}
+.modal-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:18px}.modal-head h3{font-family:Cinzel,serif;font-size:30px;line-height:1}.modal-head p{color:var(--muted);margin-top:8px;line-height:1.5}.close{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.09);color:white;font-size:26px;cursor:pointer}.price-grid{display:grid;gap:14px}.price-card{border:1px solid var(--line);border-radius:22px;padding:18px;background:rgba(255,255,255,.08)}.price-card h4{font-size:19px;margin-bottom:8px}.price-card small{display:block;color:var(--muted);line-height:1.45;margin-bottom:14px}.price-period{display:inline-flex;margin-bottom:12px;padding:8px 12px;border-radius:999px;background:rgba(255,217,138,.12);border:1px solid rgba(255,217,138,.24);color:#ffe9b8;font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.price-row{display:flex;justify-content:space-between;align-items:center;gap:14px;border-top:1px solid rgba(255,255,255,.12);padding:12px 0}.price-row span{color:var(--muted);font-weight:750;line-height:1.35}.price-row strong{color:var(--gold);font-size:22px;white-space:nowrap}.store-actions{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}.store-link{display:flex;align-items:center;justify-content:center;gap:10px;text-align:center;padding:14px;border-radius:18px;background:rgba(255,217,138,.09);border:1px solid rgba(255,217,138,.22);color:#ffe9b8;font-weight:800;line-height:1.5;text-decoration:none}.store-link svg{width:22px;height:22px;flex:0 0 auto}.store-link.whatsapp{background:linear-gradient(135deg,var(--whatsapp),#128c7e);border:0;color:#fff}.store-link:hover{filter:brightness(1.1)}
 .location-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.location-option{border:1px solid var(--line);border-radius:22px;padding:18px;background:rgba(255,255,255,.08);text-decoration:none;transition:.2s transform,.2s background}.location-option:hover{transform:translateY(-2px);background:rgba(255,255,255,.12)}.location-option strong{display:block;font-size:19px;margin-bottom:6px;color:#fff}.location-option span{display:block;color:var(--muted);font-weight:700;line-height:1.45}
 @media(max-width:860px){.screen{min-height:auto;padding-top:36px}.hero{grid-template-columns:1fr}.photo-stage{min-height:520px;order:-1}.info-section{margin-top:18px}.event-card{grid-template-columns:1fr}.price-grid{grid-template-columns:1fr}.final-cta{margin-top:-28px}}
-@media(max-width:430px){.portal{width:min(390px,86vw)}.photo-stage{min-height:440px}.hero-card{border-radius:28px}.event-item{grid-template-columns:1fr;gap:4px}.count-grid{gap:7px}.count-unit{border-radius:16px;padding:11px 4px}.final-cta{padding-bottom:56px}.cta-actions{display:grid}.cta-actions .btn{width:100%;min-width:0}.intro-copy h1{bottom:6%}.intro-copy p{top:calc(100% + 10px)}.location-grid{grid-template-columns:1fr}}
+@media(max-width:430px){.portal{width:min(390px,86vw)}.photo-stage{min-height:440px}.hero-card{border-radius:28px}.event-item{grid-template-columns:1fr;gap:4px}.count-grid{gap:7px}.count-unit{border-radius:16px;padding:11px 4px}.final-cta{padding-bottom:56px}.cta-actions{display:grid}.cta-actions .btn{width:100%;min-width:0}.intro-copy h1{bottom:6%}.intro-copy p{top:calc(100% + 10px)}.location-grid,.store-actions{grid-template-columns:1fr}.price-row{align-items:flex-start;flex-direction:column;gap:5px}.price-row strong{font-size:24px}}
 </style>
 </head>
 <body>
@@ -179,14 +179,37 @@ button,a{ -webkit-tap-highlight-color:transparent }
 <div class="price-modal" id="prices" onclick="modalBg(event)">
   <div class="price-modal-card">
     <div class="modal-head">
-      <div><h3>Valores</h3><p>Consulta rápida para os convidados.</p></div>
+      <div><h3>Valores</h3></div>
       <button class="close" onclick="closePrices()">×</button>
     </div>
     <div class="price-grid">
-      <div class="price-card"><h4>Rodízio Tradicional</h4><small>Buffet de massas, salgadinhos, petiscos, sobremesas e pizzas.</small><div class="row"><span>Dinheiro físico</span><strong>R$ 59,99</strong></div><div class="row"><span>Cartão</span><strong>R$ 64,99</strong></div><div class="note">Refil incluso com reserva: grátis. Sem reserva: R$ 15,00.</div></div>
-      <div class="price-card"><h4>Fusion Food</h4><small>Inclui tradicional, churrasco na brasa, oriental e sobremesa especial.</small><div class="row"><span>Dinheiro físico</span><strong>R$ 79,99</strong></div><div class="row"><span>Cartão</span><strong>R$ 84,99</strong></div><div class="note">Refil com reserva: R$ 5,00. Sem reserva: R$ 15,00.</div></div>
+      <div class="price-card">
+        <div class="price-period">Sexta-feira · 1º piso</div>
+        <h4>Rodízio Tradicional</h4>
+        <small>Clientes com reserva ganham refil cortesia.</small>
+        <div class="price-row"><span>Pagamento em dinheiro físico</span><strong>R$ 59,99</strong></div>
+        <div class="price-row"><span>Crédito e débito</span><strong>R$ 64,99</strong></div>
+      </div>
+      <div class="price-card">
+        <div class="price-period">Crianças · Tradicional</div>
+        <h4>Sexta a domingo, feriados e vésperas</h4>
+        <small>Obrigatória a apresentação do RG ou certidão.</small>
+        <div class="price-row"><span>3 a 5 anos · dinheiro</span><strong>R$ 19,99</strong></div>
+        <div class="price-row"><span>3 a 5 anos · cartão</span><strong>R$ 24,99</strong></div>
+        <div class="price-row"><span>6 a 8 anos · dinheiro</span><strong>R$ 29,99</strong></div>
+        <div class="price-row"><span>6 a 8 anos · cartão</span><strong>R$ 34,99</strong></div>
+      </div>
     </div>
-    <div class="note">Boliche incluso · Área kids disponível · Instagram: @santo_strike_oficial</div>
+    <div class="store-actions">
+      <a class="store-link whatsapp" href="https://wa.me/5521988799699?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20uma%20reserva%20para%20o%20rod%C3%ADzio%20tradicional%20no%201%C2%BA%20piso." target="_blank" rel="noopener" aria-label="Reservar pelo WhatsApp">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.26-1.38a9.9 9.9 0 0 0 4.73 1.2h.01c5.46 0 9.91-4.45 9.91-9.91a9.86 9.86 0 0 0-2.91-7ZM12.05 20.15h-.01a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23a8.18 8.18 0 0 1 5.82 2.41 8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.69 8.23-8.23 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.68 4.24 3.75.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.28Z"/></svg>
+        <span>Reservar pelo WhatsApp</span>
+      </a>
+      <a class="store-link" href="https://www.instagram.com/santo_strike_oficial/" target="_blank" rel="noopener" aria-label="Abrir Instagram da loja">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.8 2h8.4A5.81 5.81 0 0 1 22 7.8v8.4a5.81 5.81 0 0 1-5.8 5.8H7.8A5.81 5.81 0 0 1 2 16.2V7.8A5.81 5.81 0 0 1 7.8 2Zm-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6Zm9.65 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg>
+        <span>Instagram: @santo_strike_oficial</span>
+      </a>
+    </div>
   </div>
 </div>
 
